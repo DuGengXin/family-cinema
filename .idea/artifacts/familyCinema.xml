@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="familyCinema">
+    <output-path>$PROJECT_DIR$/classes/artifacts/familyCinema</output-path>
+    <root id="archive" name="familyCinema.war">
+      <element id="artifact" artifact-name="familyCinema:war exploded" />
+    </root>
+  </artifact>
+</component>

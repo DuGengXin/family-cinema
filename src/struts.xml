@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<package name="demo" extends="struts-default" namespace="/">
+		<action name="user_*" class="userAction" method="{1}">
+			<result name="success" type="chain">video_findAll</result>
+			<result name="faild">/index.jsp</result>
+		</action>
+		<action name="video_*" class="videoAction" method="{1}">
+			<result name="success" type="redirect">/home.jsp</result>
+			<result name="findAll" type="chain">video_findAll</result>
+			<result name="faild" type="redirect">/manage.jsp</result>
+			<result name="play" type="redirect">/play.jsp</result>
+			<result name="delfaild">/manage.jsp</result>
+		</action>
+		<action name="mess_*" class="messAction" method="{1}">
+			<result name="success" type="chain">video_play</result>
+		</action>
+	</package>
+</struts>
